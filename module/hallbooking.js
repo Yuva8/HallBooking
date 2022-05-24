@@ -87,4 +87,3 @@ module.exports.createCustomerwithBookedData = async (req,res,next) => {
     }
 }
 
-

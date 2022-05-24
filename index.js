@@ -6,9 +6,10 @@ const cors = require("cors");
 const app = express();
 
 dotenv.config();
+mongo.connect();
 app.use(cors());
 app.use(express.json());
-mongo.connect();
+
 
 // app.use('/',(req, res, next) => {
 // res.send("this is my fucking worldshhn")
@@ -18,4 +19,8 @@ app.use('/hallbooking',getRouter)
 
 
 
-app.listen(process.env.PORT  || 3000);
+const port=process.env.PORT || 3050;
+
+app.listen(port,function(){
+    console.log("Server started successfully");
+});
